@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://scrapbazar.in/public/13.png");
+  }
+  
+  .login-container {
+    background-color: #dfe9df;
+    border-radius: 10px;
+    padding: 20px;
+    padding-right: 45px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #137b6f;
+  }
+  
+  .input-container {
+    margin-bottom: 15px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    border-color: dodgerblue;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fdc400;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 15px;
+    font-weight: bold;
+  }
+
+  .btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button:hover {
+    background-color: #137b6f;
+  }
+  
+  a {
+    color: dodgerblue;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .login-container {
+    animation: slideIn 0.5s ease;
+    text-align: center;
+  }
+/* CSS for SVG Waves Animation */
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  animation: wave-animation 2s linear infinite alternate;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+h2{
+  text-align: center;
+  font-weight: bolder;
+}
+
+
+
+.register-container {
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20220217/pngtree-green-fresh-wind-hand-painted-garbage-classification-illustration-background-image_953326.jpg");
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: slideIn 0.5s ease;
+  padding-right: 45px;
+}

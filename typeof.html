@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Ems - Pickup</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/clients/Capture.PNG" rel="icon">
+  <link href="assets/img/clients/Capture.PNG" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/flaticon.css">
+
+  <!-- Template Main CSS File -->
+  <link href="typeof.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+  <div class="container p-5">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 local_home_leftSide mt-5 pt-5">
+        <h1 class="local_home_title">Sell your recyclables <br>online with <span class="highlight">E-Scrap!</span></h1>
+        <div class="local_home_sub_title">
+          <span class="local_home_pickup_items">Paper - Plastics - Metals - Appliances </span>
+          <br>
+        </div>
+        <img src="https://scrapbazar.in/public/favourite_food.png" alt="assets" style="max-height: 300px; width: auto; margin-top: 25px; ">
+      </div>
+      <div class="col-lg-6 login-mobile-box" id="schedulePickup">
+        <div id="SchedulePickup" class="local_home_rightSide" style="height: 75vh;">
+          <div class="login_form_open">
+            <div class="local_login_form">
+              <form id="signupForm" class="mt-5" action="typeofConnect.php" method="POST">
+                <div class="webview_number_input_box">
+                  <div id="float-label" class="">
+                    <input name="contact_name" type="text" maxlength="500" class="" id="contactNameInput" placeholder="">
+                    <label for="contactName" class="" required>Contact Name</label>
+                  </div>
+                </div>
+                <div class="webview_number_input_box last_child sign_up_middle_child">
+                  <label for="pincode" class=""></label>
+                  <div id="float-label" class="">
+                    <select name="pincode" id="pincodeInput" class="mb-4">
+                      <option value="" disabled selected>Select Pincode</option>
+                      <option value="123456">411056</option>
+                      <option value="234567">411018</option>
+                      <option value="345678">411027</option>
+                      <option value="456789">411035</option>
+                      <option value="567890">411012</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="webview_number_input_box sign_up_middle_child">
+                  <div id="float-label" class="">
+                    <input name="contact_email" type="text" maxlength="500" class="" id="emailInput" placeholder="">
+                    <label for="email" class="">Email (Optional)</label>
+                  </div>
+                </div>
+                <div class="category mt-5">
+                  <h6>CATEGORY THAT BEST DESCRIBES YOU?</h6>
+                  <div class="category_box">
+                    <div class="category_box_box">
+                      <label>
+                        <input type="radio" name="category" value="household">
+                        <img class="selected_icon" src="https://ikp.edgekit.net/y8s2vhk66ef/household_coloured1__R95zz9GH.png" alt="">
+                        <p class="selected_text">HOUSEHOLD</p>
+                      </label>
+                    </div>
+                    <div class="category_box_box">
+                      <label>
+                        <input type="radio" name="category" value="enterprise">
+                        <img class="non_selected_icon" src="https://ikp.edgekit.net/y8s2vhk66ef/enterprise_bw1_RZxZ80dRv.png" alt="">
+                        <p class="non_selected_text">ENTERPRISE</p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" id="nextButton" class="login_btn_web_view ion-color ion-color-success md button button-solid ion-activatable ion-focusable">Next</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+      // Get form data
+      var formData = new FormData(this);
+      // Make an AJAX request to the server
+      fetch('typeofConnect.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        if (data.trim() === 'Saved') {
+          alert('Saved'); // Show alert
+          window.location.href = 'schedule.html'; // Redirect to the next page
+        } else {
+          alert('Failed to save. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      });
+    });
+  </script>
+</body>
+</html>

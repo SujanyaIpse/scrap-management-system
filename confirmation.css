@@ -1,0 +1,118 @@
+.local_pickup_complete {
+    background: #f6faf5;
+    /* background-image: url(https://ikp.edgekit.net/y8s2vhk66ef/3713351__1__ozU2WJ4TDZT.png?updatedAt=1628633098862), url(https://ikp.edgekit.net/y8s2vhk66ef/Dark_Green_Abstract_1__76xy8MWRgvt.png?updatedAt=1628145633861); */
+    background-position: 9rem 21rem, left 11rem;
+    background-repeat: no-repeat, no-repeat;
+    height: 100vh;
+    background-size: 385px, auto;
+    overflow: auto;
+    padding: 20px 30px;
+}
+
+.pickup_complete_title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 59px;
+  color: #5b5b5b;
+  display: flex;
+  align-items: center;
+}
+.pickup_complete_text {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #5b5b5b;
+}
+.pickup_complete_button {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    border: none;
+    background: none;
+    color: #3ab34a;
+    cursor: pointer;
+    margin: 0.2rem;
+}
+.pickup_complete_button:focus{
+    outline: none;
+    border:none
+}
+ion-icon.checkmark_ {
+    color: #257430;
+    font-weight: 600;
+    font-size: 5rem;
+}
+
+@media (max-width: 768px) { 
+   .local_pickup_complete{
+    background-position: left bottom, bottom;
+
+  }
+}
+@media (max-width: 576px) { 
+  .pickup_complete_title {
+    font-size: 35px;
+  }
+  .pickup_complete_text{
+    font-size: 22px;
+    width: 80%;
+  }
+  .pickup_complete_button{
+    font-size: 17px;
+  }
+}
+@media (max-width: 513px) { 
+   .local_pickup_complete{
+    background-image: none;
+    background-image: url(https://ikp.edgekit.net/y8s2vhk66ef/Dark_Green_Abstract_1__76xy8MWRgvt.png?updatedAt=1628145633861);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: auto;
+    overflow: auto;
+  }
+}
+
+.pickup_complete_title {
+    align-items: center;
+    color: #5b5b5b;
+    display: flex;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 59px;
+}
+
+.home-btn{
+    background-color: #fdc400;
+    border: none;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.home-btn-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    margin-right: 120px;
+}
+
+.btn-wrap{
+  display: flex;
+  flex-direction: row;
+  margin-left: 900px;
+}

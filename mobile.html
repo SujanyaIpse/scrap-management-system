@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Ems - Pickup</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/clients/Capture.PNG" rel="icon">
+  <link href="assets/img/clients/Capture.PNG" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/flaticon.css">
+
+  <!-- Template Main CSS File -->
+  <link href="mobile.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 local_home_leftSide mt-5 pt-5">
+        <h1 class="local_home_title">Sell your recyclables <br>online with <span class="highlight">E-Scrap!</span></h1>
+        <div class="local_home_sub_title">
+          <span class="local_home_pickup_items">Paper - Plastics - Metals - Appliances </span>
+          <br>
+        </div>
+        <img src="https://scrapbazar.in/public/favourite_food.png" alt="assets" style="max-height: 300px; width: auto; margin-top: 25px; margin-left: 50px;">
+      </div>
+      <div class="col-lg-6 login-mobile-box" id="schedulePickup">
+        <div id="SchedulePickup" class="local_home_rightSide" style="height: 75vh;">
+          <div class="login_form_open">
+            <div class="local_login_form">
+              <div>
+                <form id="schedulePickupForm" action="mobileConnect.php" method="POST">
+                  <h4 class="local_login_title">Schedule a Pickup</h4>
+                  <p class="local_mobile_text">Mobile</p>
+                  <div class="local_input_box">
+                    <span style="width: 2rem;">+91</span>
+                    <input name="contact_number" type="tel" maxlength="10" class="sign_header_input" id="contact_number" autocomplete="new-password" value="" minlength="10" maxlength="10" required>
+                  </div>
+                  <p id="errorText" class="error_para"></p>
+                  <button type="submit" id="nextButton" class="local_next_button md button button-solid ion-activatable ion-focusable" disabled> NEXT </button>
+                  <p class="help_text support_number mt-3">Facing Problems? Call us at <a href="tel:+917666194604"> +917666194604</a></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-btn-cont">
+        <a href="homePage.html" class="home-btn"> Go to Home </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your JavaScript code -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const phoneNumberInput = document.getElementById('contact_number');
+      const nextButton = document.getElementById('nextButton');
+      const errorText = document.getElementById('errorText');
+
+      phoneNumberInput.addEventListener('input', function() {
+        const contact_number = phoneNumberInput.value.trim();
+        if (contact_number.length === 10) {
+          nextButton.removeAttribute('disabled');
+          errorText.textContent = ''; // Clear error message
+        } else {
+          nextButton.setAttribute('disabled', 'true');
+          errorText.textContent = 'Please enter a valid 10-digit phone number';
+        }
+      });
+
+      document.getElementById('schedulePickupForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const contact_number = phoneNumberInput.value.trim();
+        if (contact_number.length === 10) {
+          // Fetch form data
+          const formData = new FormData(this);
+
+          // Make an AJAX request to store the form data
+          fetch('mobileConnect.php', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.text())
+          .then(data => {
+            alert(data); // Show alert with server response
+            if (data.trim() === 'Saved') {
+              window.location.href = 'typeof.html'; // Redirect to the next step if data is saved successfully
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+          });
+        } else {
+          errorText.textContent = 'Please enter a valid 10-digit phone number';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

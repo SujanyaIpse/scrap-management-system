@@ -1,0 +1,51 @@
+body{
+    background-image: url("https://scrapbazar.in/public/13.png");
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-heading{
+    align-items: center;
+}
+
+.name{
+    color: #61b245;
+}
+
+.row-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    margin-right: 80px;
+    border: solid 2px #61b245;
+    border-radius: 15px;
+    box-shadow: 0lvh;
+    padding: 20px;
+}
+
+.image1{
+    height: 200px;
+    width: 200px;
+}
+
+h3{
+    color: grey;
+}

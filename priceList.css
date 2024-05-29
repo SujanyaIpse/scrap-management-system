@@ -1,0 +1,18 @@
+.main-heading{
+    align-items: center;
+}
+
+.name{
+    color: #61b245;
+}
+
+.row-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+}
+

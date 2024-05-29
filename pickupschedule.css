@@ -1,0 +1,157 @@
+.schedule_title {
+    align-items: center;
+    color: #5b5b5b;
+    display: flex;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    gap: 5px;
+    justify-content: space-between;
+    letter-spacing: -1.1px;
+    line-height: 29px;
+    margin-bottom: .5rem;
+}
+
+button.accordion-button, button.accordion-button:active, button.accordion-button:focus {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: .8rem .5rem;
+    width: 100%;
+}
+button.accordion-button, button.accordion-button:active, button.accordion-button:focus {
+    outline: none;
+}
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: button;
+}   
+
+body{
+    background: #f6faf5;
+    background-image: url("https://ikp.edgekit.net/h1rxzpffx/scrapuncle/assets/Webpage_graphics_BLPHY130f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1663274455661");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    height: 100vh;
+    overflow: auto;
+    padding: 10px;
+    position: relative;
+}
+
+.button-native::after {
+    inset: 0px;
+    position: absolute;
+    content: "";
+    opacity: 0;
+}
+constructed stylesheet
+.button-native {
+    border-radius: var(--border-radius);
+    -webkit-font-smoothing: antialiased;
+    margin: 0px;
+    padding-left: var(--padding-start);
+    padding-right: var(--padding-end);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    text-decoration: inherit;
+    text-indent: inherit;
+    text-overflow: inherit;
+    text-transform: inherit;
+    text-align: inherit;
+    white-space: inherit;
+    color: inherit;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: var(--transition);
+    border-width: var(--border-width);
+    border-style: var(--border-style);
+    border-color: var(--border-color);
+    outline: none;
+    background-color: #3ab34a;
+    line-height: 1;
+    box-shadow: var(--box-shadow);
+    contain: layout style;
+    cursor: pointer;
+    opacity: var(--opacity);
+    overflow: var(--overflow);
+    z-index: 0;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+.schedule_pickup_button_local{
+    background-color: #3ab34a;
+    border: 2px solid #3ab34a;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+.form-select {
+    display: block;
+    width: 50%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select {
+    word-wrap: normal;
+}
+
+input{
+    display: block;
+    width: 50%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.icon{
+    color: #006940;
+}
+
+.head-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main-head{
+    margin-top: 25px;
+}

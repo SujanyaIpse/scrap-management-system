@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ems - Pickup</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/clients/Capture.PNG" rel="icon">
+  <link href="assets/img/clients/Capture.PNG" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/flaticon.css">
+
+  <!-- Template Main CSS File -->
+  <link href="pickupschedule.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" crossorigin="anonymous" />
+</head>
+
+<body>
+
+  <div class="head-container">
+    <h1 class="main-head"> <span> E-Scrap </span> MADE with <i class="bi bi-heart-fill icon"></i> </h1>
+  </div>
+  <form class="container mt-5" id="pickupForm">
+    <div class="row">
+      <div class="col-md-12 col-lg-7 schedule_pickup_div style-2">
+        <div class="back_icon_"><ion-icon icon="arrow-back" color="black" role="img" class="md ion-color ion-color-black"></ion-icon></div>
+        <div class="accordion">
+          <div class="date_nd_time">
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <div class="schedule_date">
+                  <p class="schedule_title">Enter Date</p>
+                  <div class="calendar_nd_date">
+                    <input type="date" id="date" name="date" min="2024-05-26" required>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                <div class="schedule_time">
+                  <p class="schedule_title">Enter Time</p>
+                  <div class="calendar_nd_date">
+                    <input type="time" id="time" name="time" min="09:00" max="20:00" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <label for="address" class="mt-5 schedule_title">Enter Address:</label><br>
+    <input type="text" id="address" name="address" placeholder="Enter your address here" required><br><br>
+
+    <div class="location_tab">
+      <div class="weight_select_div">
+        <div class="schedule_title">
+          <span class="estimate_title">Estimated Weight</span>
+        </div>
+        <div class="address_local calendar_nd_date">
+          <select id="weightSelect" name="estimated_weight" class="form-select" required>
+            <option value="Less than 20kg">Less than 20kg</option>
+            <option value="20-50kg">20-50kg</option>
+            <option value="50-100kg">50-100kg</option>
+            <option value="100-700kg">100-700kg</option>
+            <option value="More than 700kg">More than 700kg</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mt-3">
+        <div class="location_tab">
+          <div class="">
+            <p class="schedule_title remark_title">
+              <span>Remarks</span>
+            </p>
+            <div class="remarks_local calendar_nd_date">
+              <input name="remarks" class="remarks_input">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="location_tab pb-2">
+      <button type="submit" class="schedule_pickup_button_local md button button-solid ion-activatable ion-focusable" name="schedule_pickup">Schedule A Pickup</button>
+      <p style="font-size: 0.9rem; font-weight: 500; margin-bottom: 4rem;"></p>
+      <div class="help_text schedule_page">Facing Problems? Call us at <a href="tel:+91766194604">+91766194604</a></div>
+      <p class="fill_schedule_text">
+        <ion-icon icon="help-circle" class="help_circle_icon md" role="img"></ion-icon>
+        Please fill all the required details to schedule pickup
+      </p>
+    </div>
+  </form>
+
+  <script>
+    document.getElementById("pickupForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Get the selected weight
+      var weightSelect = document.getElementById("weightSelect").value;
+
+      // Check if the selected weight is less than 20kg
+      if (weightSelect === "Less than 20kg") {
+        alert("We do not accept orders below 20kg.");
+        return; // Prevent form submission
+      }
+
+      // Get form data
+      var formData = new FormData(this);
+
+      // Make an AJAX request to store the form data
+      fetch('pickupdetailsConnect.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        if (data.trim() === 'Data stored successfully') {
+          alert('Data stored successfully');
+          window.location.href = 'confirmation.html'; // Redirect to confirmation page if data is stored successfully
+        } else {
+          alert(data); // Show alert with server response
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      });
+    });
+  </script>
+</body>
+
+</html>
